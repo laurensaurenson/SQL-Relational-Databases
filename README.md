@@ -12,4 +12,8 @@ FROM Invoice
 JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
 WHERE Country = "Brazil"
 
-4. 
+4. SELECT  *
+FROM Employee
+WHERE Title = "Sales Support Agent"
+
+5.
