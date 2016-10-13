@@ -16,4 +16,8 @@ WHERE Country = "Brazil"
 FROM Employee
 WHERE Title = "Sales Support Agent"
 
-5.
+5. SELECT  BillingCountry
+FROM Invoice
+GROUP BY BillingCountry
+
+6. 
