@@ -25,4 +25,15 @@ FROM Invoice
 JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
 WHERE Customer.Country = "Brazil"
 
-7. 
+7. SELECT  Employee.FirstName || " " || Employee.LastName AS "EmployeeName", Invoice.*
+FROM Invoice
+JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+
+8. SELECT  Employee.FirstName || " " || Employee.LastName AS "EmployeeName", Invoice.Total, Customer.FirstName || " " || Customer.LastName AS "CustomerName", Invoice.BillingCountry 
+FROM Invoice
+JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+GROUP BY CustomerName
+
+9. 
