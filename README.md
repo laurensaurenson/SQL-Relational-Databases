@@ -20,4 +20,9 @@ WHERE Title = "Sales Support Agent"
 FROM Invoice
 GROUP BY BillingCountry
 
-6. 
+6. SELECT  Invoice.*
+FROM Invoice
+JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
+WHERE Customer.Country = "Brazil"
+
+7. 
