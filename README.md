@@ -30,4 +30,10 @@ FROM Invoice
 JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
 JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
 
-8. 
+8. SELECT  Employee.FirstName || " " || Employee.LastName AS "EmployeeName", Invoice.Total, Customer.FirstName || " " || Customer.LastName AS "CustomerName", Invoice.BillingCountry 
+FROM Invoice
+JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+GROUP BY CustomerName
+
+9. 
