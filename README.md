@@ -87,4 +87,41 @@ FROM Employee
 JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
 GROUP BY Employee.EmployeeId
 
-19. 
+19. SELECT Employee.FirstName || " " || Employee.LastName AS "Name", SUM(Invoice.Total)
+FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+WHERE Invoice.InvoiceDate LIKE "2009%"
+GROUP BY Employee.EmployeeId
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 1
+
+20. SELECT Employee.FirstName || " " || Employee.LastName AS "Name", SUM(Invoice.Total)
+FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+WHERE Invoice.InvoiceDate LIKE "2010%"
+GROUP BY Employee.EmployeeId
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 1
+
+21. SELECT Employee.FirstName || " " || Employee.LastName AS "Name", SUM(Invoice.Total)
+FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+GROUP BY Employee.EmployeeId
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 1
+
+22. SELECT Employee.FirstName || " " || Employee.LastName AS "Name", COUNT(Customer.CustomerId)
+FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+GROUP BY Employee.EmployeeId
+
+23. SELECT SUM(Total), BillingCountry
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY Sum(Total) DESC
+
+24. 
