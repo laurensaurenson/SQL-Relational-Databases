@@ -1,6 +1,6 @@
 # SQL-Relational-Databases
 
-
+``` 
 1. SELECT  CustomerId, Country, FirstName || " " || LastName AS 'Name' FROM Customer
 WHERE Country <> "USA"
 
@@ -158,3 +158,4 @@ JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
 GROUP BY MediaType.Name
 ORDER BY SUM(Invoice.Total) DESC
 LIMIT 1
+```
