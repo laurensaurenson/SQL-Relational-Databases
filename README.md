@@ -66,4 +66,9 @@ JOIN Artist ON Album.ArtistId = Artist.ArtistId
 FROM Invoice
 GROUP BY BillingCountry
 
-15. 
+15. SELECT PlaylistTrack.*, Playlist.*, COUNT(*)
+FROM Playlist
+JOIN PlaylistTrack ON Playlist.PlaylistId = PlaylistTrack.PlaylistId
+GROUP BY Playlist.PlaylistId
+
+16. 
