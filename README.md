@@ -66,9 +66,20 @@ JOIN Artist ON Album.ArtistId = Artist.ArtistId
 FROM Invoice
 GROUP BY BillingCountry
 
-15. SELECT PlaylistTrack.*, Playlist.*, COUNT(*)
+15. SELECT Playlist.Name, COUNT(*)
 FROM Playlist
 JOIN PlaylistTrack ON Playlist.PlaylistId = PlaylistTrack.PlaylistId
 GROUP BY Playlist.PlaylistId
 
-16. 
+16. SELECT Track.Name, Album.Title, MediaType.Name, Genre.Name
+FROM Track
+JOIN Album ON Track.AlbumId = Album.AlbumId
+JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
+JOIN Genre ON Track.GenreId = Genre.GenreId
+
+17. SELECT *, COUNT(*)
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+GROUP BY Invoice.InvoiceId
+
+18. 
