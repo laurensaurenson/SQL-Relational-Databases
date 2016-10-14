@@ -124,4 +124,12 @@ FROM Invoice
 GROUP BY BillingCountry
 ORDER BY Sum(Total) DESC
 
-24. 
+24. SELECT Track.Name, COUNT(*), Invoice.InvoiceDate
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+WHERE Invoice.InvoiceDate LIKE "2013-%"
+GROUP BY Track.Name
+ORDER BY COUNT(*) DESC
+
+25. 
