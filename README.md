@@ -44,4 +44,8 @@ SELECT COUNT(*), SUM(Total)
 FROM Invoice
 WHERE InvoiceDate LIKE "2011%"
 
-10. 
+10. SELECT COUNT(*)
+FROM InvoiceLine
+WHERE InvoiceId = "37"
+
+11. 
