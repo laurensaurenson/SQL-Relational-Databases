@@ -132,4 +132,29 @@ WHERE Invoice.InvoiceDate LIKE "2013-%"
 GROUP BY Track.Name
 ORDER BY COUNT(*) DESC
 
-25. 
+25. SELECT Track.Name, COUNT(*), Invoice.InvoiceDate
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+GROUP BY Track.Name
+ORDER BY COUNT(*) DESC
+LIMIT 5
+
+26. SELECT Artist.Name
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+JOIN Album ON Track.AlbumId = Album.AlbumId
+JOIN Artist ON Album.ArtistId = Artist.ArtistId
+GROUP BY Artist.Name
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 3
+
+27. SELECT MediaType.Name
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
+GROUP BY MediaType.Name
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 1
