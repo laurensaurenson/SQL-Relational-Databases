@@ -51,3 +51,9 @@ WHERE InvoiceId = "37"
 11. SELECT COUNT(*), InvoiceId
 FROM InvoiceLine
 GROUP BY InvoiceId
+
+12. SELECT Track.Name, InvoiceLine.*
+FROM InvoiceLine
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+
+13. 
