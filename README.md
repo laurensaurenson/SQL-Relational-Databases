@@ -82,4 +82,9 @@ FROM Invoice
 JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
 GROUP BY Invoice.InvoiceId
 
-18. 
+18. SELECT Employee.FirstName || " " || Employee.LastName AS "Name", COUNT(*)
+FROM Employee
+JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
+GROUP BY Employee.EmployeeId
+
+19. 
