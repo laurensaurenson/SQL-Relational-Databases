@@ -48,4 +48,6 @@ WHERE InvoiceDate LIKE "2011%"
 FROM InvoiceLine
 WHERE InvoiceId = "37"
 
-11. 
+11. SELECT COUNT(*), InvoiceId
+FROM InvoiceLine
+GROUP BY InvoiceId
